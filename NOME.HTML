@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armazenar Mensagem no Local Storage</title>
+</head>
+<body>
+
+    <h2>Armazenar Mensagem</h2>
+    <form id="messageForm">
+        <input type="text" id="messageInput" placeholder="Digite uma mensagem" required>
+        <button type="submit">Enviar</button>
+    </form>
+    <p id="storedMessage"></p>
+
+    <script>
+        document.getElementById('messageForm').addEventListener('submit', function(e) {
+            e.preventDefault(); 
+
+            const message = document.getElementById('messageInput').value;
+            localStorage.setItem('mensagem', message); 
+            
+            console.log(`Mensagem armazenada: ${message}`); 
+            alert(`Mensagem armazenada com sucesso!`); 
+            
+            
+            document.getElementById('storedMessage').textContent = `Mensagem armazenada: ${message}`;
+        });
+    </script>
+
+</body>
+</html>

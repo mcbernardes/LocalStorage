@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armazenar Número no Local Storage</title>
+</head>
+<body>
+
+    <h2>Armazenar Número</h2>
+    <form id="numberForm">
+        <input type="number" id="numberInput" placeholder="Digite um número" required>
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        document.getElementById('numberForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Evita o envio do formulário
+            
+            const number = document.getElementById('numberInput').value;
+            localStorage.setItem('numero', number); // Armazena o número no Local Storage
+            
+            console.log(`Número ${number} foi armazenado no Local Storage.`); // Mensagem no console
+            alert(`Número ${number} foi armazenado com sucesso!`); // Alerta para o usuário
+        });
+    </script>
+
+</body>
+</html>
+
